@@ -1,0 +1,26 @@
+# Documentación pa desplegar
+
+name: Despliegue
+
+on:
+  push:
+      branches:
+  # Rama donde al hacer push se lanzará el action
+      - main
+jobs:
+  build:
+  
+      runs-on: ubuntu-latest
+      
+      steps:
+      # Este no le hemos puesto nombre
+      - uses: actions/checkout@v2
+      # Este nombre se lo ponemos al siguiente paso (uses)
+      - name: Despliegue de la aplicación NexoRun en Angular
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+        with:
+          github_acces_token: ${{secrets.ACCESS_TOKEN}}
+          build_configuration: production
+          base_href: /NexoRun/
+          deploy_branch: gh-pages
+          angular_dist_build_folder: dist/NexoRun
