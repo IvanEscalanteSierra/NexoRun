@@ -19,7 +19,7 @@ jobs:
       - name: Despliegue de la aplicación NexoRun en Angular
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
-          github_acces_token: ${{ secrets.ACCESS_TOKEN }}
+          github_access_token: ${{ secrets.ACCESS_TOKEN }}
           build_configuration: production
           base_href: /NexoRun/
           deploy_branch: gh-pages
